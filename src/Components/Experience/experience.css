@@ -1,0 +1,23 @@
+.experiencesHolder {
+  padding-left: 10%;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-evenly;
+}
+
+.singleExperience {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-gap: 20px;
+  font-size: 1rem;
+  border-bottom: 2px solid grey;
+  padding: 10px;
+}
+
+.expImage {
+  height: 150px;
+  align-self: center;
+  justify-self: center;
+  border-radius: 10px;
+}

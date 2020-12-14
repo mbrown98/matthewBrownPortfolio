@@ -2,14 +2,18 @@ import React from "react";
 import "../../App";
 import "./skills.css";
 
+import ts from "./FrontEnd/ts.png";
+import js from "./FrontEnd/js.png";
+import re from "./FrontEnd/react.png";
+
+import mongo from "./BackEnd/mongo.png";
 const FRONT_END_SKILLS = [
   {
     name: "JavaScript",
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1024px-Unofficial_JavaScript_logo_2.svg.png",
+    image: js,
   },
-  { name: "TypeScript", image: "" },
-  { name: "React", image: "" },
+  { name: "TypeScript", image: ts },
+  { name: "React", image: re },
   { name: "Redux", image: "" },
   { name: "React Native", image: "" },
   { name: "Vue", image: "" },
@@ -19,13 +23,13 @@ const FRONT_END_SKILLS = [
 ];
 
 const BACK_END_SKILLS = [
-  { name: "Node.js", image: " " },
+  { name: "Node.js", image: "" },
   { name: "Python", image: " " },
   { name: "Java", image: " " },
   { name: "GraphQL", image: " " },
   { name: "Apollo", image: " " },
   { name: "AWS", image: " " },
-  { name: "MongoDB", image: " " },
+  { name: "MongoDB", image: mongo },
   { name: "SQL", image: " " },
   { name: "Git/Github", image: " " },
   { name: "Docker", image: " " },
@@ -41,21 +45,27 @@ const Skills = () => {
         <div className="feBeContainer">
           {" "}
           {FRONT_END_SKILLS.map((skill) => (
-            <div>{skill.name}</div>
+            <div className="singleSkill">
+              <img src={skill.image} />
+              <div>{skill.name}</div>
+            </div>
           ))}
         </div>
         <h5>Back-End</h5>
         <div className="feBeContainer">
           {" "}
           {BACK_END_SKILLS.map((skill) => (
-            <>
-              {/* <image
-                src={`url("https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1024px-Unofficial_JavaScript_logo_2.svg.png")`}
-                alt="JS"
-                className="skillImage"
-              /> */}
+            <div className="singleSkill">
+              <div
+                style={{
+                  backgroundImage: `url(${skill.image})`,
+                  height: "50px",
+                  width: "50px",
+                }}
+              ></div>
+
               <div>{skill.name}</div>
-            </>
+            </div>
           ))}
         </div>
       </div>
