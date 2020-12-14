@@ -1,39 +1,113 @@
 .App {
-  background-color: black;
-  color: white;
+  background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+  padding: 20px;
+  font-size: 16px;
+  display: grid;
+  flex-direction: column;
+  justify-content: space-around;
+  grid-template-columns: 1fr;
+
+  grid-template-areas: "navBar" "mainTitle" "about" "skills" "experience" "education";
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.section-header {
+  /* Fallback: Set a background color. */
+  font-size: 50px;
+  background-color: #ca4246;
+
+  /* Create the gradient. */
+  background-image: linear-gradient(
+    45deg,
+    #ca4246 16.666%,
+    #e16541 16.666%,
+    #e16541 33.333%,
+    #f18f43 33.333%,
+    #f18f43 50%,
+    #8b9862 50%,
+    #8b9862 66.666%,
+    #476098 66.666%,
+    #476098 83.333%,
+    #a7489b 83.333%
+  );
+
+  /* Set the background size and repeat properties. */
+  background-size: 100%;
+  background-repeat: repeat;
+
+  /* Use the text as a mask for the background. */
+  /* This will show the gradient as a text color rather than element bg. */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Animate the text when loading the element. */
+  /* This animates it on page load and when hovering out. */
+  animation: rainbow-text-simple-animation-rev 0.75s ease forwards;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.section-header:hover {
+  animation: rainbow-text-simple-animation 0.5s ease-in forwards;
+}
+
+/* Move the background and make it smaller. */
+/* Animation shown when entering the page and after the hover animation. */
+@keyframes rainbow-text-simple-animation-rev {
+  0% {
+    background-size: 650%;
+  }
+  40% {
+    background-size: 650%;
+  }
+  100% {
+    background-size: 100%;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Move the background and make it larger. */
+/* Animation shown when hovering over the text. */
+@keyframes rainbow-text-simple-animation {
+  0% {
+    background-size: 100%;
+  }
+  80% {
+    background-size: 650%;
+  }
+  100% {
+    background-size: 650%;
+  }
+}
+
+#myName {
+  font-size: 10rem;
+}
+
+#nameSubText {
+  font-size: 2rem;
+}
+
+.navBar {
+  grid-area: navBar;
+}
+
+.mainTitle {
+  grid-area: mainTitle;
+  font-size: 80px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.about {
+  grid-area: about;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.skills {
+  grid-area: skills;
+}
+
+.experience {
+  grid-area: experience;
+}
+
+.education {
+  grid-area: education;
 }

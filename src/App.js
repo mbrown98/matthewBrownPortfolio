@@ -1,21 +1,22 @@
-import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
-import Header from "./Components/Header";
-import About from "./Components/About";
+import React, { useEffect, useState } from "react";
 
+import "./App.css";
+import MainTitle from "./Components/Title";
+import About from "./Components/About";
+import Skills from "./Components/Skills";
 import Experience from "./Components/Experience";
-import Projects from "./Components/Projects";
-import Contact from "./Components/Contact";
+import Education from "./Components/Education";
 
 function App() {
   return (
     <div className="App">
-      <Header />
+      <div class="navBar">NavBar</div>
+      <MainTitle />
       <About />
-      {/* <Experience />
-      <Projects />
-      <Contact /> */}
+
+      <Skills />
+      <Experience />
+      <Education />
     </div>
   );
 }

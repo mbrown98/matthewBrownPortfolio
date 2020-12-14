@@ -1,0 +1,15 @@
+.skillsHolder {
+  padding-left: 10%;
+}
+
+.feBeContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  font-size: 0.8rem;
+}
+
+.skillImage {
+  height: 100px;
+  width: 100px;
+}
